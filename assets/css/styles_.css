@@ -803,3 +803,20 @@ a {
         padding: 0 2.5rem
     }
 }
+
+
+.col-width{
+    width: 31% !important;
+}
+
+.border-top {
+    border-top: 1px #cbd0dd;
+}
+
+.border-bottom {
+    border-top: 1px #cbd0dd;
+}
+
+.form_growers{
+    display: none;
+}
