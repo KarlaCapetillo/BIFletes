@@ -1,0 +1,44 @@
+﻿<?xml-stylesheet type="text/xsl" href="travel_all.xslt" target="#content"?>
+<model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:navbar="http://widgets.panaxbi.com/navbar" xmlns:dim="http://panaxbi.com/dimension" xmlns:total="http://panax.io/total" xmlns:type="http://panax.io/datatype" xmlns:state="http://panax.io/state">
+	<dates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:navbar="http://widgets.panaxbi.com/navbar" xmlns:dim="http://panaxbi.com/dimension" xmlns:total="http://panax.io/total" xmlns:type="http://panax.io/datatype" xmlns:state="http://panax.io/state" navbar:position="1" headerText="Fecha de embarque" />
+	<codes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:navbar="http://widgets.panaxbi.com/navbar" xmlns:dim="http://panaxbi.com/dimension" xmlns:total="http://panax.io/total" xmlns:type="http://panax.io/datatype" xmlns:state="http://panax.io/state" xsi:type="dimension" />
+	<companies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:navbar="http://widgets.panaxbi.com/navbar" xmlns:dim="http://panaxbi.com/dimension" xmlns:total="http://panax.io/total" xmlns:type="http://panax.io/datatype" xmlns:state="http://panax.io/state" xsi:type="dimension" />
+	<borders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:navbar="http://widgets.panaxbi.com/navbar" xmlns:dim="http://panaxbi.com/dimension" xmlns:total="http://panax.io/total" xmlns:type="http://panax.io/datatype" xmlns:state="http://panax.io/state" xsi:type="dimension" />
+	<growers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:navbar="http://widgets.panaxbi.com/navbar" xmlns:dim="http://panaxbi.com/dimension" xmlns:total="http://panax.io/total" xmlns:type="http://panax.io/datatype" xmlns:state="http://panax.io/state" xsi:type="dimension" />
+	<matched_freights xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:navbar="http://widgets.panaxbi.com/navbar" xmlns:dim="http://panaxbi.com/dimension" xmlns:total="http://panax.io/total" xmlns:type="http://panax.io/datatype" xmlns:state="http://panax.io/state" cd="Freight Code" type:dt="date" dt="Freight Date" tp="Freight Type" co_cd="Freight Company Code" dim:co_id="companies/@desc" co_id="Freight Company" trl="Trailer" dim:bdr="borders" bdr="Border" dim:gwr="growers" gwr="Grower Name" plts="Pallets" tp_cd="Prod Type Code" prd_tp="Product Type" amt_bs="Base Freight" pkup="Pick-Up" uld="Unload" amt="Total Quote" st="Status">
+		<row frt="1" inv="3" cd="EXPORT-1" tp="Export" bdr="Nuevo Laredo, Tamaulipas" dt_frt="20240820" dt_inv="20240925" ser="CPI" fol="8408" uuid="9566410E-8256-4553-9FD2-F7F622FA6838" emsr="DAVID CANCHOLA MARTINEZ" rcp="PRODUCE TEAM LLC" subt="1226.0900" amt="1226.0900" mon="USD">
+			<growers>
+				<row id="1" cd="EXPORT-1" dt="20240820" tp_id="1" tp="Export" co_id="302" co_cd="CANCHOLA " co="DAVID CANCHOLA MARTINEZ" trl="C-03" bdr="3" st="Matched">
+					<row id_det="1" gwr="566" plts="13" prd_tp_id="2" tp_cd="P FRUIT" prd_tp="Packed Fruits &amp; Vegetables" amt_bs="422.97" pkup="108.33" amt="531.30" cs="0" mft="" lot_po="" st="Matched" />
+					<row id_det="2" gwr="442" plts="4" prd_tp_id="1" tp_cd="MATERIAL" prd_tp="Supplies and Materiales" amt_bs="130.15" pkup="33.33" amt="163.48" cs="0" mft="" lot_po="" st="Matched" />
+					<row id_det="3" gwr="598" plts="4" prd_tp_id="2" tp_cd="P FRUIT" prd_tp="Packed Fruits &amp; Vegetables" amt_bs="130.15" pkup="33.33" amt="163.48" cs="0" mft="" lot_po="" st="Matched" />
+					<row id_det="4" gwr="207" plts="9" prd_tp_id="2" tp_cd="P FRUIT" prd_tp="Packed Fruits &amp; Vegetables" amt_bs="292.83" pkup="75.00" amt="367.83" cs="0" mft="" lot_po="" st="Matched" />
+				</row>
+				<row id="2" cd="NAC-1" assoc="EXPORT-105" dt="20240920" tp_id="2" tp="Mexican" co_id="845" co_cd="ANTONIO" co="ANTONIO TREJO MATA" bdr="2" st="Matched">
+					<row id_det="5" gwr="598" plts="4" prd_tp_id="2" tp_cd="P FRUIT" prd_tp="Packed Fruits &amp; Vegetables" amt_bs="6769.23" amt="6769.23" cs="0" mft="" lot_po="" st="Matched" />
+					<row id_det="6" gwr="207" plts="9" prd_tp_id="1" tp_cd="MATERIAL" prd_tp="Supplies and Materiales" amt_bs="15230.77" amt="15230.77" cs="0" mft="" lot_po="" st="Matched" />
+				</row>
+			</growers>
+			<apportionment>
+				<row apportionment_type="" pickup_cost="" unload_cost="" manual_apportionment="" assign_to="" exchange_rate="" />
+			</apportionment>
+		</row>
+		<row frt="2" inv="1" cd="NAC-1" assoc="EXPORT-105" tp="Mexican" bdr="No Aplica" dt_frt="20240920" dt_inv="20240902" ser="T" fol="148" uuid="B5246BD0-8527-4317-A528-55CFE3E40A95" emsr="JOSE ANTONIO TREJO MATA" rcp="PODER DE CAMBIO AGRICOLA" subt="20000.0000" iva="3200.0000" iva_r="800.0000" isr_r="250.0000" amt="22150.0000" mon="MXN">
+			<growers>
+				<row id="1" cd="EXPORT-1" dt="20240820" tp_id="1" tp="Export" co_id="302" co_cd="CANCHOLA " co="DAVID CANCHOLA MARTINEZ" trl="C-03" bdr="3" st="Matched">
+					<row id_det="1" gwr="566" plts="13" prd_tp_id="2" tp_cd="P FRUIT" prd_tp="Packed Fruits &amp; Vegetables" amt_bs="422.97" pkup="108.33" amt="531.30" cs="0" mft="" lot_po="" st="Matched" />
+					<row id_det="2" gwr="442" plts="4" prd_tp_id="1" tp_cd="MATERIAL" prd_tp="Supplies and Materiales" amt_bs="130.15" pkup="33.33" amt="163.48" cs="0" mft="" lot_po="" st="Matched" />
+					<row id_det="3" gwr="598" plts="4" prd_tp_id="2" tp_cd="P FRUIT" prd_tp="Packed Fruits &amp; Vegetables" amt_bs="130.15" pkup="33.33" amt="163.48" cs="0" mft="" lot_po="" st="Matched" />
+					<row id_det="4" gwr="207" plts="9" prd_tp_id="2" tp_cd="P FRUIT" prd_tp="Packed Fruits &amp; Vegetables" amt_bs="292.83" pkup="75.00" amt="367.83" cs="0" mft="" lot_po="" st="Matched" />
+				</row>
+				<row id="2" cd="NAC-1" assoc="EXPORT-105" dt="20240920" tp_id="2" tp="Mexican" co_id="845" co_cd="ANTONIO" co="ANTONIO TREJO MATA" bdr="2" st="Matched">
+					<row id_det="5" gwr="598" plts="4" prd_tp_id="2" tp_cd="P FRUIT" prd_tp="Packed Fruits &amp; Vegetables" amt_bs="6769.23" amt="6769.23" cs="0" mft="" lot_po="" st="Matched" />
+					<row id_det="6" gwr="207" plts="9" prd_tp_id="1" tp_cd="MATERIAL" prd_tp="Supplies and Materiales" amt_bs="15230.77" amt="15230.77" cs="0" mft="" lot_po="" st="Matched" />
+				</row>
+			</growers>
+			<apportionment>
+				<row apportionment_type="" pickup_cost="" unload_cost="" manual_apportionment="" assign_to="" exchange_rate="" />
+			</apportionment>
+		</row>
+	</matched_freights>
+</model>
