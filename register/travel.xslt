@@ -12,7 +12,7 @@
 
 	<xsl:import href="headers.xslt"/>
 
-	<xsl:key name="field" match="model/freights/row/@*[namespace-uri()=''][not(name()='id_freight')][not(name()='freight_type')][not(name()='freight_date')][not(name()='freight_code')][not(name()='special_credit_terms')][not(name()='currency')][not(name()='base_freight')][not(name()='pickup')][not(name()='unload')][not(name()='total_quote')][not(name()='iva')]" use="1"/>
+	<xsl:key name="field" match="model/freights/row/@*[namespace-uri()=''][not(name()='id_freight')][not(name()='vendor_code')][not(name()='vendor')][not(name()='trailer')][not(name()='border_code')][not(name()='border')][not(name()='starting_point')][not(name()='ending_point')][not(name()='associated_freight')][not(name()='currency')][not(name()='base_freight')][not(name()='pickup')][not(name()='unload')][not(name()='total_quote')][not(name()='iva')]" use="1"/>
 	<xsl:key name="field" match="model/freights/row/*/*/@*[namespace-uri()='']" use="2"/>
 
 	<xsl:key name="hidden" match="model/freights/row/@id" use="generate-id()"/>
@@ -25,12 +25,10 @@
 
 	<xsl:key name="dim" match="/*/*" use="name()"/>
 
-	<xsl:param name="title">Freight Quotation</xsl:param>
-
-
+	<xsl:param name="title">Travel register</xsl:param>
 
 	<xsl:template match="/*">
-		<!--<xsl:param name="active" select="1"/>-->
+	
 		<div class="card" >
 			<div class="card-body">
 				<h5 class="card-title fw-semibold">
@@ -211,38 +209,5 @@
 			<xsl:with-param name="value" select="."/>
 		</xsl:call-template>
 	</xsl:template>
-
-	<!--<xsl:template mode="widget_form" match="*|@*">
-		<div class="row">
-			<div class="col-sm-12 col-lg-12">
-				<div class="mb-3">
-					<label class="form-label">Currency</label>
-					<xsl:apply-templates mode="widget_input_text" select="."/>
-				</div>
-				<div class="mb-3">
-					<label class="form-label">Base Freight</label>
-					<xsl:apply-templates mode="widget_input_text" select="."/>
-				</div>
-				<div class="mb-3">
-					<label class="form-label">Pick-Up</label>
-					<xsl:apply-templates mode="widget_input_text" select="."/>
-				</div>
-				<div class="mb-3">
-					<label class="form-label">Unload</label>
-					<xsl:apply-templates mode="widget_input_text" select="."/>
-				</div>
-				<div class="mb-3">
-					<label class="form-label">Total quote</label>
-					<xsl:apply-templates mode="widget_input_text" select="."/>
-				</div>
-				<div class="mb-3">
-					<label class="form-label">IVA</label>
-					<xsl:apply-templates mode="widget_input_text" select="."/>
-				</div>
-			</div>
-		</div>
-	</xsl:template>-->
-
-
 
 </xsl:stylesheet>

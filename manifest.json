@@ -13,7 +13,7 @@
         "#valores": "#nosotros",
 
 
-        "#travel_register": "./register/travel.xml",
+        "#travel": "./register/travel.xml",
         "#freight": "register/freight.xml",
         "#growers": "register/growers.xml",
         "#quotation": "register/quotation.xml",

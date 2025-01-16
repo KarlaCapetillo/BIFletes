@@ -89,4 +89,7 @@
 	</xsl:template>
 
 
+	<xsl:template mode="control_type" match="@*">text</xsl:template>
+	
+	
 </xsl:stylesheet>
