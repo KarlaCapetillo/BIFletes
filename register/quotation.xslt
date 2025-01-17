@@ -12,10 +12,24 @@
 
 	<xsl:import href="headers.xslt"/>
 
-	<xsl:key name="field" match="model/freights/row/@*[namespace-uri()=''][not(name()='id_freight')][not(name()='freight_type')][not(name()='freight_date')][not(name()='freight_code')][not(name()='special_credit_terms')][not(name()='currency')][not(name()='base_freight')][not(name()='pickup')][not(name()='unload')][not(name()='total_quote')][not(name()='iva')]" use="1"/>
+	<xsl:key name="field" match="model/freights/row/@*[namespace-uri()='']" use="1"/>
 	<xsl:key name="field" match="model/freights/row/*/*/@*[namespace-uri()='']" use="2"/>
 
 	<xsl:key name="hidden" match="model/freights/row/@id" use="generate-id()"/>
+	<xsl:key name="hidden" match="@id_freight"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@freight_type"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@freight_date"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@freight_code"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@special_credit_terms"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@vendor_code"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@vendor"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@trailer"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@border_code"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@border"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@starting_point"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@ending_point"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@associated_freight"  use="generate-id()"/>
+	
 	<xsl:key name="readonly" match="model/freights/row/@id" use="generate-id()"/>
 
 	<xsl:key name="control" match="model/*[row][count(row)&gt;=6]" use="'select'"/>
@@ -39,7 +53,7 @@
 				</h5>
 				<div class="card-body">
 					<form>
-						<xsl:apply-templates mode="form_content" select="key('field','1')"/>
+						<xsl:apply-templates mode="form_content" select="key('field','1')[not(key('hidden',generate-id()))]"/>
 					</form>
 				</div>
 			</div>
@@ -211,38 +225,5 @@
 			<xsl:with-param name="value" select="."/>
 		</xsl:call-template>
 	</xsl:template>
-
-	<!--<xsl:template mode="widget_form" match="*|@*">
-		<div class="row">
-			<div class="col-sm-12 col-lg-12">
-				<div class="mb-3">
-					<label class="form-label">Currency</label>
-					<xsl:apply-templates mode="widget_input_text" select="."/>
-				</div>
-				<div class="mb-3">
-					<label class="form-label">Base Freight</label>
-					<xsl:apply-templates mode="widget_input_text" select="."/>
-				</div>
-				<div class="mb-3">
-					<label class="form-label">Pick-Up</label>
-					<xsl:apply-templates mode="widget_input_text" select="."/>
-				</div>
-				<div class="mb-3">
-					<label class="form-label">Unload</label>
-					<xsl:apply-templates mode="widget_input_text" select="."/>
-				</div>
-				<div class="mb-3">
-					<label class="form-label">Total quote</label>
-					<xsl:apply-templates mode="widget_input_text" select="."/>
-				</div>
-				<div class="mb-3">
-					<label class="form-label">IVA</label>
-					<xsl:apply-templates mode="widget_input_text" select="."/>
-				</div>
-			</div>
-		</div>
-	</xsl:template>-->
-
-
 
 </xsl:stylesheet>

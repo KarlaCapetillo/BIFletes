@@ -12,10 +12,25 @@
 
 	<xsl:import href="headers.xslt"/>
 
-	<xsl:key name="field" match="model/freights/row/@*[namespace-uri()=''][not(name()='id_freight')][not(name()='vendor_code')][not(name()='vendor')][not(name()='trailer')][not(name()='border_code')][not(name()='border')][not(name()='starting_point')][not(name()='ending_point')][not(name()='associated_freight')][not(name()='currency')][not(name()='base_freight')][not(name()='pickup')][not(name()='unload')][not(name()='total_quote')][not(name()='iva')]" use="1"/>
+	<xsl:key name="field" match="model/freights/row/@*[namespace-uri()='']" use="1"/>
 	<xsl:key name="field" match="model/freights/row/*/*/@*[namespace-uri()='']" use="2"/>
 
 	<xsl:key name="hidden" match="model/freights/row/@id" use="generate-id()"/>
+	<xsl:key name="hidden" match="@vendor_code"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@vendor"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@trailer"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@border_code"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@border"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@starting_point"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@ending_point"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@associated_freight"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@currency"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@base_freight"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@pickup"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@unload"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@total_quote"  use="generate-id()"/>
+	<xsl:key name="hidden" match="@iva"  use="generate-id()"/>
+	
 	<xsl:key name="readonly" match="model/freights/row/@id" use="generate-id()"/>
 
 	<xsl:key name="control" match="model/*[row][count(row)&gt;=6]" use="'select'"/>
